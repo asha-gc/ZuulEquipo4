@@ -1,6 +1,6 @@
 # ZuulEquipo4
 
-##Integrantes:
+## Integrantes:
 
 - Gómez Benítez Jonathan
 - González Concha Ashanty

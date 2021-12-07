@@ -1,0 +1,10 @@
+outside,outside the main entrance of the university
+theatre,in a lecture theatre
+pub,in the campus pub
+lab,in a computing lab
+office,in the computing admin office
+null,theatre,lab,pub
+null,null,null,outside
+null,outside,null,null
+outside,office,null,null
+null,null,null,lab

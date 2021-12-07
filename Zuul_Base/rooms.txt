@@ -1,1 +1,0 @@
-"outside the main entrance of the university",null, theatre, lab, pub

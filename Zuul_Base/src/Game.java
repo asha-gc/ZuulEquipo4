@@ -1,3 +1,8 @@
+package src;
+
+import utils.Command;
+import utils.Parser;
+
 /**
  * 
  * To play this game, create an instance of this class and call the "play"
@@ -22,21 +27,21 @@ public class Game {
         play();
     }
     
-    private ArrayList<String> leerArchivo() throws FileNotFoundException, IOException{
-        ArrayList<String> lecturaArchivo = new ArrayList<String>();
-        File doc = new File("juego_config.txt");
+    // private ArrayList<String> leerArchivo() throws FileNotFoundException, IOException{
+    //     ArrayList<String> lecturaArchivo = new ArrayList<String>();
+    //     File doc = new File("juego_config.txt");
 
-        BufferedReader obj = new BufferedReader(new FileReader(doc));
+    //     BufferedReader obj = new BufferedReader(new FileReader(doc));
 
-        String strng;
-        while ((strng = obj.readLine()) != null)
-            lecturaArchivo.add(strng);
-        if(lecturaArchivo.size()>10){
-            System.out.println("Favor de revisar la estructura del archivo");
-            System.exit(0);
-        }
-        return lecturaArchivo;
-    }
+    //     String strng;
+    //     while ((strng = obj.readLine()) != null)
+    //         lecturaArchivo.add(strng);
+    //     if(lecturaArchivo.size()>10){
+    //         System.out.println("Favor de revisar la estructura del archivo");
+    //         System.exit(0);
+    //     }
+    //     return lecturaArchivo;
+    // }
 
     private void createRooms() {
         // Move Rooms to constructor
@@ -58,37 +63,37 @@ public class Game {
         currentRoom = outside;
     }
     
-    private Room inicializacionRoom(Room room, int i){
-        String[] salidaCuartos = archivoTxt.get(i).split(",");
-        ArrayList<Room> salidaRooms = new ArrayList<Room>();
-        for(int j=0; j<salidaCuartos.length; j++){
-            switch(salidaCuartos[j]){
-                case "null":
-                    salidaRooms.add(null);
-                    break;
-                case "theatre":
-                    salidaRooms.add(theatre);
-                    break;
-                case "lab":
-                    salidaRooms.add(lab);
-                    break;
-                case "pub":
-                    salidaRooms.add(pub);
-                    break;
-                case "outside":
-                    salidaRooms.add(outside);
-                    break;
-                case "office":
-                    salidaRooms.add(office);
-                    break;
-                default:
-                    System.out.println("Error en la sintaxis del archivo");
-                    System.exit(0);
-            }
-        }
-        room.setExits(salidaRooms.get(0), salidaRooms.get(1), salidaRooms.get(2), salidaRooms.get(3));
-        return room;
-    }
+    // private Room inicializacionRoom(Room room, int i){
+    //     String[] salidaCuartos = archivoTxt.get(i).split(",");
+    //     ArrayList<Room> salidaRooms = new ArrayList<Room>();
+    //     for(int j=0; j<salidaCuartos.length; j++){
+    //         switch(salidaCuartos[j]){
+    //             case "null":
+    //                 salidaRooms.add(null);
+    //                 break;
+    //             case "theatre":
+    //                 salidaRooms.add(theatre);
+    //                 break;
+    //             case "lab":
+    //                 salidaRooms.add(lab);
+    //                 break;
+    //             case "pub":
+    //                 salidaRooms.add(pub);
+    //                 break;
+    //             case "outside":
+    //                 salidaRooms.add(outside);
+    //                 break;
+    //             case "office":
+    //                 salidaRooms.add(office);
+    //                 break;
+    //             default:
+    //                 System.out.println("Error en la sintaxis del archivo");
+    //                 System.exit(0);
+    //         }
+    //     }
+    //     room.setExits(salidaRooms.get(0), salidaRooms.get(1), salidaRooms.get(2), salidaRooms.get(3));
+    //     return room;
+    // }
 
     public void play() {
         printWelcome();

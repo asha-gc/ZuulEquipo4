@@ -1,3 +1,4 @@
+package src;
 /**
  * A "Room" represents one location in the scenery of the game. It is
  * connected to other rooms via exits. The exits are labelled north,

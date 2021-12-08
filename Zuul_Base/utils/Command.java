@@ -1,3 +1,4 @@
+package utils;
 /**
  *
  * This class holds information about a command that was issued by the user.

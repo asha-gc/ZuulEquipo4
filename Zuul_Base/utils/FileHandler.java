@@ -1,3 +1,4 @@
+package utils;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -8,8 +9,8 @@ public class FileHandler {
     public FileHandler(){
     }
 
-    public ArrayList<String[]> readFile(String fileName) {
-        ArrayList<String[]> content = new ArrayList<>();
+    public ArrayList<String> readFile(String fileName) {
+        ArrayList<String> content = new ArrayList<>();
 
         try {
             File file = new File(fileName);
@@ -17,7 +18,7 @@ public class FileHandler {
             String line;
 
             while ((line = reader.readLine()) != null){
-                content.add(line.split(","));
+                content.add(line);
             }
 
             reader.close();

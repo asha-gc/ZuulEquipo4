@@ -1,0 +1,16 @@
+rooms
+ outside
+  description: outside the main entrance of the university
+  paths: []
+ theatre
+  description: in a lecture theatre
+  paths: []
+ pub
+  description: in the campus pub
+  paths: []
+ lab
+  description: in a computing lab
+  paths: []
+ office
+  description: in the computing admin office
+  paths: []

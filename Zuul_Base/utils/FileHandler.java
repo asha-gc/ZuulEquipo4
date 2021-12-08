@@ -6,14 +6,19 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 
 public class FileHandler {
-    public FileHandler(){
+    private String basePath;
+
+    public FileHandler(String baseFolder){
+        // this.basePath = String.format("./%s/", baseFolder);
+        this.basePath = (!baseFolder.equals(""))? String.format("./%s/", baseFolder): "./";
     }
 
     public ArrayList<String> readFile(String fileName) {
         ArrayList<String> content = new ArrayList<>();
 
         try {
-            File file = new File(fileName);
+            File file = new File(String.format("%s%s", basePath, fileName));
+            System.out.println(file.getPath());
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line;
 
@@ -29,28 +34,21 @@ public class FileHandler {
         return content;
     }
 
-    public void writeFile(String fileName, ArrayList<String[]> content) {
+    public void writeFile(String fileName, ArrayList<String> content) {
+        
         try {
             if (content.size() > 0) {
-                File file = new File(fileName);
+                File file = new File(String.format("%s%s", basePath, fileName));
                 FileWriter writer = new FileWriter(file);
 
-                for (String[] line : content) {
-                    int i = 0;
-                    for(String value : line){
-                        if(i==0){
-                            writer.write(value + ",");
-                        } else{
-                            writer.write(value + "\n");
-                        }
-                        i++;
-                    }
+                for (String line : content) {
+                    writer.write(line + "\n");
                 }
 
                 writer.close();
             }
         } catch (Exception e) {
-            System.out.println("Archivo " + fileName + " no encontrado");
+            System.out.println("Archivo " + fileName + " no pudo ser guardado");
         }
     }
 }

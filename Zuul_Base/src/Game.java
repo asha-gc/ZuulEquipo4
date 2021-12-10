@@ -93,8 +93,6 @@ public class Game {
         System.out.println("Type 'help' if you need help.");
         
         displayDirections();
-
-        System.out.println();
     }
 
     private void displayDirections(){
@@ -114,6 +112,7 @@ public class Game {
         if (this.currentRoom.isValidExit("west")) {
             System.out.print("west ");
         }
+        System.out.println();
     }
     
     private void printHelp() {

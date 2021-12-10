@@ -9,7 +9,6 @@ public class FileHandler {
     private String basePath;
 
     public FileHandler(String baseFolder){
-        // this.basePath = String.format("./%s/", baseFolder);
         this.basePath = (!baseFolder.equals(""))? String.format("./%s/", baseFolder): "./";
     }
 
@@ -18,7 +17,6 @@ public class FileHandler {
 
         try {
             File file = new File(String.format("%s%s", basePath, fileName));
-            System.out.println(file.getPath());
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line;
 

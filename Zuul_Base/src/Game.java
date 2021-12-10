@@ -55,10 +55,11 @@ public class Game {
         return wantToQuit;
     }
 
-    private void goRoom(Command command) {
+    public boolean goRoom(Command command) {
+        boolean canChange = false;
         if (!command.hasSecondWord()) {
             System.out.println("Go where?");
-            return;
+            return canChange;
         }
 
         String direction = command.getSecondWord();
@@ -66,11 +67,13 @@ public class Game {
         // Replace multiple ifs with a method
         if (this.currentRoom.isValidExit(direction)) {
             this.currentRoom = this.currentRoom.getExit(direction);
+            canChange = true;
         } else {
             System.out.println("There is no door!");
         }
         // Replace repeated code with method
         displayDirections();
+        return canChange;
     }
 
     private boolean quit(Command command) {

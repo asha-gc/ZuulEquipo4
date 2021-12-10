@@ -1,23 +1,27 @@
 package tests;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
+import java.util.ArrayList;
+
+import org.junit.Before;
 import org.junit.Test;
 
-import src.Room;
-import utils.FileParser;
+import utils.FileHandler;
+
 
 public class ConfigurationTest {
-
+    ArrayList<String> expectedList = new ArrayList<>();
+    @Before
+    public void crateList(){
+        expectedList.add("RoomTest");
+        expectedList.add(" description: Test Room");
+        expectedList.add(" paths:");
+    }
     @Test
     public void testConfiguration() {
-        Room testRoom = new Room();
-        testRoom.setDescription("Test Room");
-
-        FileParser fileParser = new FileParser("TestRoom.txt");
-        
-        Room generatedRoom = fileParser.generateRooms();
-
-        assertEquals(true, testRoom.getDescription().equals(generatedRoom.getDescription()));
+        FileHandler fileHandler = new FileHandler("");
+        ArrayList<String> configurationList = fileHandler.readFile("TestRoom.txt");
+        assertArrayEquals(expectedList.toArray(), configurationList.toArray());
     }
 }

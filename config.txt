@@ -1,16 +1,15 @@
-rooms
- outside
-  description: outside the main entrance of the university
-  paths: []
- theatre
-  description: in a lecture theatre
-  paths: []
- pub
-  description: in the campus pub
-  paths: []
- lab
-  description: in a computing lab
-  paths: []
- office
-  description: in the computing admin office
-  paths: []
+outside
+ description: outside the main entrance of the university
+ paths: theatre-east, lab-south, pub-west
+theatre
+ description: in a lecture theatre
+ paths: outside-west
+pub
+ description: in the campus pub
+ paths: office-east
+lab
+ description: in a computing lab
+ paths: outside-north, office-east
+office
+ description: in the computing admin office
+ paths: lab-west

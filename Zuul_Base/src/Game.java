@@ -20,7 +20,7 @@ public class Game {
     private Room currentRoom;
     
     public Game() {
-        FileParser fileParser = new FileParser();
+        FileParser fileParser = new FileParser("config.txt");
         this.currentRoom = fileParser.generateRooms();
         this.parser = new Parser();
     }
@@ -36,7 +36,7 @@ public class Game {
         System.out.println("Thank you for playing.  Good bye.");
     }
 
-    private boolean processCommand(Command command) {
+    public boolean processCommand(Command command) {
         boolean wantToQuit = false;
 
         if (command.isUnknown()) {

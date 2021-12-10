@@ -6,13 +6,15 @@ import java.util.HashMap;
 import src.Room;
 public class FileParser {
     private FileHandler fileHandler;
+    private String fileName;
 
-    public FileParser(){
+    public FileParser(String fileName){
         this.fileHandler = new FileHandler("");
+        this.fileName = fileName;
     }
 
     public Room generateRooms(){
-        ArrayList<String> gameData = fileHandler.readFile("config.txt");
+        ArrayList<String> gameData = fileHandler.readFile(this.fileName);
         HashMap<String, Room> rooms = new HashMap<>();
         String currentRoom = "", fieldKey, fieldValue;
         String[] field;

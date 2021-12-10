@@ -24,10 +24,6 @@ public class Game {
         this.currentRoom = fileParser.generateRooms();
         this.parser = new Parser();
     }
-    
-    public void acccederaljuego(){
-        play();
-    }
 
     public void play() {
         printWelcome();
@@ -122,9 +118,5 @@ public class Game {
         System.out.println("Your command words are:");
         System.out.println("   go quit help");
     }
-
-    public static void main(String[] args) {
-        Game prueba = new Game();
-        prueba.play();
-    }
+    
 }

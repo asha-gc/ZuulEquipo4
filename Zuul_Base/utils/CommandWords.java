@@ -1,3 +1,4 @@
+package utils;
 /**
  * 
  * This class holds an enumeration of all command words known to the game.

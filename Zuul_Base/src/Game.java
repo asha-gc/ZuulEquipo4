@@ -56,14 +56,12 @@ public class Game {
 
         String direction = command.getSecondWord();
 
-        // Replace multiple ifs with a method
         if (this.currentRoom.isValidExit(direction)) {
             this.currentRoom = this.currentRoom.getExit(direction);
             canChange = true;
         } else {
             System.out.println("There is no door!");
         }
-        // Replace repeated code with method
         displayDirections();
         return canChange;
     }

@@ -1,0 +1,16 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "org_junit_platform_junit-platform-console-standalone_1.6.0_junit-platform-console-standalone-1.6.0.jar"
+    ],
+    
+    "java.test.config": [
+        {
+            "name": "myConfiguration",
+            "workingDirectory": "${workspaceFolder}",
+            "args": [ "-c", "com.test" ],
+            "vmargs": [ "-Xmx512M" ],
+            "env": { "key": "value" },
+        }
+    ]
+}

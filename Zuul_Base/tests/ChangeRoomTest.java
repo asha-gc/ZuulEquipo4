@@ -1,3 +1,5 @@
+/*.Publicado por ArcodeTeam: Jonathan, Roberto y Ashanty el 10 de Diciembre de 2021*/
+
 package tests;
 
 import static org.junit.Assert.assertEquals;
